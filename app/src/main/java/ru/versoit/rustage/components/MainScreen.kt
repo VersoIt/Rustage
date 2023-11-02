@@ -11,10 +11,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.collections.immutable.ImmutableList
+import ru.versoit.presentation.adapters.BarricadeAdapter
+import ru.versoit.presentation.adapters.WeaponAdapter
+import ru.versoit.presentation.ui.components.DamageCalculatorScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(navigationItems: ImmutableList<NavigationItem>) {
+fun MainScreen(
+    navigationItems: ImmutableList<NavigationItem>,
+    weapons: ImmutableList<WeaponAdapter>,
+    barricades: ImmutableList<BarricadeAdapter>
+) {
 
     val navController = rememberNavController()
     Scaffold(
@@ -30,7 +37,7 @@ fun MainScreen(navigationItems: ImmutableList<NavigationItem>) {
                 }
                 composable(route = Destination.DAMAGE_CALCULATOR.name) {
                     Box(modifier = Modifier.padding(padding)) {
-                        Text("calculator")
+                        DamageCalculatorScreen(weapons = weapons, barricades = barricades)
                     }
                 }
                 composable(route = Destination.BINDS.name) {

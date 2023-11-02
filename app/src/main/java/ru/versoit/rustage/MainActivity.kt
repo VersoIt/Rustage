@@ -16,6 +16,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import kotlinx.collections.immutable.persistentListOf
+import ru.versoit.domain.Barricade
+import ru.versoit.domain.Gun
+import ru.versoit.presentation.adapters.BarricadeAdapter
+import ru.versoit.presentation.adapters.WeaponAdapter
 import ru.versoit.rustage.components.Destination
 import ru.versoit.rustage.components.MainScreen
 import ru.versoit.rustage.components.NavigationItem
@@ -25,6 +29,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             RustageTheme {
                 Surface(
@@ -56,6 +61,27 @@ class MainActivity : ComponentActivity() {
                                 hasMessage = false,
                                 selectedIcon = Icons.Filled.Create,
                                 unselectedIcon = Icons.Outlined.Create,
+                            )
+                        ),
+                        weapons = persistentListOf(
+                            WeaponAdapter(
+                                Gun(
+                                    name = "Assault riffle",
+                                    imagePath = "dsf",
+                                    delay = 12,
+                                    damage = 1,
+                                    health = 4,
+                                    patrons = 30
+                                )
+                            )
+                        ),
+                        barricades = persistentListOf(
+                            BarricadeAdapter(
+                                Barricade(
+                                    name = "Stena",
+                                    health = 2,
+                                    image = "23"
+                                )
                             )
                         )
                     )

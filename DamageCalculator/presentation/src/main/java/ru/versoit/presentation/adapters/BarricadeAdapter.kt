@@ -1,7 +1,10 @@
 package ru.versoit.presentation.adapters
 
+import ru.versoit.domain.Barricade
+
 class BarricadeAdapter(
-    override val isSelected: Boolean,
-    override val image: String,
-    override val name: String
-) : SelectionAdapter
+    barricade: Barricade,
+) : SelectionAdapter {
+    override val image: String = barricade.image
+    override val name: String = barricade.name
+}

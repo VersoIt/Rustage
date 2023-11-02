@@ -1,7 +1,10 @@
 package ru.versoit.presentation.adapters
 
+import ru.versoit.domain.Weapon
+
 class WeaponAdapter(
-    override val isSelected: Boolean,
-    override val image: String,
-    override val name: String
-) : SelectionAdapter
+    weapon: Weapon,
+) : SelectionAdapter {
+    override val image: String = weapon.imagePath
+    override val name: String = weapon.name
+}
