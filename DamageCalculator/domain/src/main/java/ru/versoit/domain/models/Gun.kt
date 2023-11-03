@@ -1,4 +1,4 @@
-package ru.versoit.domain
+package ru.versoit.domain.models
 
 data class Gun(
     override val name: String,

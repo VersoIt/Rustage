@@ -3,4 +3,6 @@
     <string name="home">Home</string>
     <string name="binds">Binds</string>
     <string name="damage_calculator">Calculator</string>
+    <string name="youtube" translatable="false">YouTube</string>
+    <string name="menu">Menu</string>
 </resources>

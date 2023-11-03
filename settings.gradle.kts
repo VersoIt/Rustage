@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        jcenter()
     }
 }
 dependencyResolutionManagement {
@@ -15,7 +16,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Rustage"
 include(":app")
-include(":DamageCalculator")
+include(":damagecalculator")
 include(":damagecalculator:domain")
-include(":damagecalculator:data")
 include(":damagecalculator:presentation")
+include(":damagecalculator:data")

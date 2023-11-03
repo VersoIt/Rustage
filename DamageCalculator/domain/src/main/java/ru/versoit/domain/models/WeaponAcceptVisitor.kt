@@ -1,4 +1,4 @@
-package ru.versoit.domain
+package ru.versoit.domain.models
 
 interface WeaponAcceptVisitor {
 

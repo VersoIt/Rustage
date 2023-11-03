@@ -1,6 +1,6 @@
 package ru.versoit.presentation.adapters
 
-import ru.versoit.domain.Barricade
+import ru.versoit.domain.models.Barricade
 
 class BarricadeAdapter(
     barricade: Barricade,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Rustage</string>
     <string name="home">Домой</string>
     <string name="binds">Бинды</string>
     <string name="damage_calculator">Калькулятор</string>
+    <string name="menu">Меню</string>
 </resources>

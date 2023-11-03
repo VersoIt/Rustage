@@ -14,10 +14,11 @@ import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import kotlinx.collections.immutable.persistentListOf
-import ru.versoit.domain.Barricade
-import ru.versoit.domain.Gun
+import ru.versoit.domain.models.Barricade
+import ru.versoit.domain.models.Gun
 import ru.versoit.presentation.adapters.BarricadeAdapter
 import ru.versoit.presentation.adapters.WeaponAdapter
 import ru.versoit.rustage.components.Destination
@@ -43,24 +44,21 @@ class MainActivity : ComponentActivity() {
                                 name = stringResource(id = R.string.home),
                                 badgeCount = null,
                                 hasMessage = false,
-                                selectedIcon = Icons.Filled.Home,
-                                unselectedIcon = Icons.Outlined.Home,
+                                icon = painterResource(id = R.drawable.home)
                             ),
                             NavigationItem(
                                 destination = Destination.DAMAGE_CALCULATOR,
                                 name = stringResource(id = R.string.damage_calculator),
                                 badgeCount = null,
                                 hasMessage = false,
-                                selectedIcon = Icons.Filled.PlayArrow,
-                                unselectedIcon = Icons.Outlined.PlayArrow,
+                                icon = painterResource(id = R.drawable.calculator)
                             ),
                             NavigationItem(
                                 destination = Destination.BINDS,
                                 name = stringResource(id = R.string.binds),
                                 badgeCount = null,
                                 hasMessage = false,
-                                selectedIcon = Icons.Filled.Create,
-                                unselectedIcon = Icons.Outlined.Create,
+                                icon = painterResource(id = R.drawable.keyboard)
                             )
                         ),
                         weapons = persistentListOf(

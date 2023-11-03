@@ -6,6 +6,10 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -22,14 +26,20 @@ fun MainScreen(
     weapons: ImmutableList<WeaponAdapter>,
     barricades: ImmutableList<BarricadeAdapter>
 ) {
-
+    val startDestination by rememberSaveable {
+        mutableStateOf(Destination.HOME.name)
+    }
+    var selectedScreen by rememberSaveable {
+        mutableStateOf(startDestination)
+    }
     val navController = rememberNavController()
+
     Scaffold(
         topBar = {
-
+            Toolbar(label = selectedScreen)
         },
         content = { padding ->
-            NavHost(navController = navController, startDestination = Destination.HOME.name) {
+            NavHost(navController = navController, startDestination = startDestination) {
                 composable(route = Destination.HOME.name) {
                     Box(modifier = Modifier.padding(padding)) {
                         Text("home")
@@ -51,8 +61,9 @@ fun MainScreen(
             BottomNavigation(
                 navigationItems,
                 onItemClick = { selected ->
-                    navController.navigate(selected.name)
-                }
+                    navController.navigate(selected.destination.name)
+                    selectedScreen = selected.name.uppercase()
+                },
             )
         }
     )

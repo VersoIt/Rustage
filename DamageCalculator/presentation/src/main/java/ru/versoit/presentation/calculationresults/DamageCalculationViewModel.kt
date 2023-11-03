@@ -2,9 +2,9 @@ package ru.versoit.presentation.calculationresults
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import ru.versoit.domain.Gun
-import ru.versoit.domain.Weapon
-import ru.versoit.domain.WeaponAcceptVisitor
+import ru.versoit.domain.models.Gun
+import ru.versoit.domain.models.Weapon
+import ru.versoit.domain.models.WeaponAcceptVisitor
 
 class DamageCalculationViewModel : ViewModel(), WeaponAcceptVisitor {
 

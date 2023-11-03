@@ -1,0 +1,9 @@
+[
+  {
+    "name": "assault_riffle",
+    "damage": 10,
+    "health": 100,
+    "image_path": "some_path",
+    "delay": 100
+  }
+]

@@ -1,6 +1,6 @@
 package ru.versoit.presentation.adapters
 
-import ru.versoit.domain.Weapon
+import ru.versoit.domain.models.Weapon
 
 class WeaponAdapter(
     weapon: Weapon,
