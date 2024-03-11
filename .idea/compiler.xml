@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="Rustage.buildings.domain" target="1.7" />
+      <module name="Rustage.buildings.domain.main" target="1.7" />
+      <module name="Rustage.buildings.domain.test" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -21,7 +21,7 @@ private val DarkColorScheme = darkColorScheme(
     onPrimary = Beige,
     secondaryContainer = Green,
     background = Color.Black,
-    surfaceVariant = LightGray, // цвет карточек
+    surfaceVariant = LightGray,
     onSurface = WhiteGray2,
     secondary = DarkWhite,
     onSecondary = WhiteGray
@@ -30,7 +30,7 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
     primary = Green,
     onSurface = Beige,
-    onPrimary = Beige, // Текст кнопок
+    onPrimary = Beige,
     secondaryContainer = Green,
     surface = Color.White,
 )
@@ -38,7 +38,6 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun RustageTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
@@ -55,7 +54,9 @@ fun RustageTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
+            window.statusBarColor =
+                if (darkTheme) DarkColorScheme.background.toArgb() else LightColorScheme.background.toArgb()
+
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }

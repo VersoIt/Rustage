@@ -4,23 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Create
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.outlined.Create
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import kotlinx.collections.immutable.persistentListOf
-import ru.versoit.domain.models.Barricade
-import ru.versoit.domain.models.Gun
-import ru.versoit.presentation.adapters.BarricadeAdapter
-import ru.versoit.presentation.adapters.WeaponAdapter
 import ru.versoit.rustage.components.Destination
 import ru.versoit.rustage.components.MainScreen
 import ru.versoit.rustage.components.NavigationItem
@@ -61,25 +50,27 @@ class MainActivity : ComponentActivity() {
                                 icon = painterResource(id = R.drawable.keyboard)
                             )
                         ),
-                        weapons = persistentListOf(
-                            WeaponAdapter(
-                                Gun(
-                                    name = "Assault riffle",
-                                    imagePath = "dsf",
-                                    delay = 12,
-                                    damage = 1,
-                                    health = 4,
-                                    patrons = 30
-                                )
-                            )
-                        ),
-                        barricades = persistentListOf(
-                            BarricadeAdapter(
-                                Barricade(
-                                    name = "Stena",
-                                    health = 2,
-                                    image = "23"
-                                )
+                        persistentListOf(
+                            NavigationItem(
+                                destination = Destination.HOME,
+                                name = stringResource(id = R.string.home),
+                                badgeCount = null,
+                                hasMessage = false,
+                                icon = painterResource(id = R.drawable.home)
+                            ),
+                            NavigationItem(
+                                destination = Destination.DAMAGE_CALCULATOR,
+                                name = stringResource(id = R.string.damage_calculator),
+                                badgeCount = null,
+                                hasMessage = false,
+                                icon = painterResource(id = R.drawable.calculator)
+                            ),
+                            NavigationItem(
+                                destination = Destination.BINDS,
+                                name = stringResource(id = R.string.binds),
+                                badgeCount = null,
+                                hasMessage = false,
+                                icon = painterResource(id = R.drawable.keyboard)
                             )
                         )
                     )

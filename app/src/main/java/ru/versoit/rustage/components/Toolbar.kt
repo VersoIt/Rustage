@@ -24,9 +24,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.versoit.rustage.R
 
-@Preview
 @Composable
-fun Toolbar(label: String = "") {
+fun Toolbar(label: String = "", onDrawerButtonClick: () -> Unit = { }, onYouTubeButtonClick: () -> Unit = { }) {
 
     val colors = MaterialTheme.colorScheme
     Box(
@@ -45,9 +44,7 @@ fun Toolbar(label: String = "") {
                 contentDescription = stringResource(
                     id = R.string.menu
                 ),
-                onClick = {
-
-                }
+                onClick = onDrawerButtonClick
             )
             Text(text = label, fontSize = 16.sp)
             ToolbarButton(
@@ -55,9 +52,7 @@ fun Toolbar(label: String = "") {
                 contentDescription = stringResource(
                     id = R.string.youtube
                 ),
-                onClick = {
-
-                }
+                onClick = onYouTubeButtonClick
             )
         }
     }
